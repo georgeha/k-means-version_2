@@ -37,7 +37,7 @@ curl -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/clus
 
 curl -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/finding_the_new_centroids.py
 
-curl -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/dataset2.data
+curl -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/dataset4.in
 ```
 Run the Code:
 To give it a test drive try via command line the following command:

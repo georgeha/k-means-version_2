@@ -81,7 +81,6 @@ def main():
         #----------FUNCTIONS OF RADICAL PILOT -------------------#
         # here we create a new radical session
         #DBURL = "mongodb://localhost:27017"
-        DBURL = "mongodb://ec2-184-72-89-141.compute-1.amazonaws.com:27017"
         try:
             session = radical.pilot.Session(database_url = DBURL)
         except Exception, e:
@@ -89,8 +88,8 @@ def main():
             return (-1)
 
         # don't forget to change the localhost label
-        c = radical.pilot.Context('ssh')
-        c.user_id = 'georgeha'
+        #c = radical.pilot.Context('ssh')
+        #c.user_id = 'userid'
         session.add_context(c)
         
         # Add a Pilot Manager. Pilot managers manage one or more ComputePilots.
@@ -104,7 +103,7 @@ def main():
 
         # this describes the requirements and the paramers
         pdesc = radical.pilot.ComputePilotDescription()
-        pdesc.resource =   "sierra.futuregrid.org"  #"localhost"   #"sierra.futuregrid.org"
+        pdesc.resource =   "localhost"   #"sierra.futuregrid.org"
         pdesc.runtime = 10 # minutes 
         pdesc.cores =  4 # multiprocessing.cpu_count() # we use all the cores we have
         #pdesc.cleanup = True  # delete all the files that are created automatically when the job is done
@@ -155,11 +154,9 @@ def main():
         #-------- CHOOSING THE CENTROIDS -----------#
         centroid = []
         size = len(x)
-        #print size
         for i in range(0,k):
             a1 = quickselect(x,(size*(i+1))//((k+1)))
             centroid.append(a1)
-       # print centroid
 
         for i in range(0,k):
             x.remove(centroid[i])
@@ -168,11 +165,7 @@ def main():
         #------------ PUT THE CENTROIDS IN A FILE -------------------#
         centroid_to_string = ','.join(map(str,centroid))
         centroid_file = open('centroidss.txt', 'w')
-        #print centroid_to_string
-        #print 'centroid printed above'
         centroid_file.write(centroid_to_string)
-        #for i in range(0,len(centroid_to_string)):
-        #    print 'centroid to string: %s' % centroid_to_string[i]
         centroid_file.close()       
         #------------END OF PUTTING CENTROIDS IN A FILE CENTROIDS.DATA ------#
 
@@ -195,8 +188,6 @@ def main():
                 if (i==p):
                     p2 = len(x)
                 input_string = ','.join(map(str,x[p1:p2]))
-        #        print input_string
-        #        print 'input string printed above'
                 input_file.write(input_string)
                 input_file.close()
             #--------------END OF PUTTING CENTROIDS INTO DIFFERENT FILES---------#
