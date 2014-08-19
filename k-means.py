@@ -16,7 +16,7 @@ import time
 """
 # DBURL defines the MongoDB server URL and has the format mongodb://host:port.
 # For the installation of a MongoDB server, refer to http://docs.mongodb.org.
-DBURL = ("RADICAL_PILOT_DBURL")
+DBURL = os.getenv("RADICAL_PILOT_DBURL")
 if DBURL is None:
     print "ERROR: RADICAL_PILOT_DBURL (MongoDB server URL) is not defined."
     sys.exit(1)
@@ -90,7 +90,7 @@ def main():
         # don't forget to change the localhost label
         #c = radical.pilot.Context('ssh')
         #c.user_id = 'userid'
-        session.add_context(c)
+        #session.add_context(c)
         
         # Add a Pilot Manager. Pilot managers manage one or more ComputePilots.
         print "Initiliazing Pilot Manager..."

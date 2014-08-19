@@ -31,14 +31,9 @@ mongod
 ```
 Finally, you need to download the source files of k-means algorithm:
 ```
-curl -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/k-means.py
-
-curl -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/clustering_the_elements.py
-
-curl -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/finding_the_new_centroids.py
-
-curl -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/dataset4.in
+curl -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/k-means.py -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/clustering_the_elements.py -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/finding_the_new_centroids.py -O https://raw.githubusercontent.com/georgeha/k-means-version_2/master/dataset4.in
 ```
+
 Run the Code:
 To give it a test drive try via command line the following command:
 ```
